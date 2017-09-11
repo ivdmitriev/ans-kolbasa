@@ -18,6 +18,9 @@ logstash-listeners
 [rabbitmq]
 siem-rabbitmq.work.local
 
+[zabbix]
+10.0.4.233
+
 
 [elastiksearch-balancer]
 siem-es-balancer.work.local
