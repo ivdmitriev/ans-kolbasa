@@ -19,7 +19,7 @@
     mode: 0644
   become: yes
 
-# - name: restarting and enabling ar
+- name: restarting and enabling ar
   systemd:
     name: haproxy
     enabled: yes
