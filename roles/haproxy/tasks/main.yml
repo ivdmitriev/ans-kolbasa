@@ -20,7 +20,7 @@
   become: yes
 
 - name: restarting and enabling ar
-  systemd:
+  sysctl:
     name: haproxy
     enabled: yes
     state: restarted
