@@ -12,8 +12,8 @@ siem-lsf3.work.local
 siem-lsf4.work.local
 
 [logstash:children]
-logstash-filters
-logstash-listeners
+logstash_filters
+logstash_listeners
 
 [rabbitmq]
 siem-rabbitmq.work.local
@@ -34,6 +34,6 @@ siem-esd1.work.local
 siem-esd2.work.local
 
 [elastiksearch:children]
-elastiksearch-master
-elastiksearch-balancer
-elastiksearch-data
+elastiksearch_master
+elastiksearch_balancer
+elastiksearch_data
