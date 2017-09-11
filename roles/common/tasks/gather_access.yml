@@ -6,27 +6,27 @@
     state: present
     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
   become: no
-  
 
-- name: make sure, that group wheel is present
-    group:
-      name: sudo
-      state: present
-    become: yes
+
+- name: make sure that group wheel is present
+  group:
+    name: sudo
+    state: present
+  become: yes
 
 - name: allow passwordless sudo to wheel group
-    lineinfile:
-        dest: /etc/sudoers
-        state: present
-        regexp: '^%sudo'
-        line: '%sudo  ALL=(ALL:ALL) NOPASSWD: ALL'
-        validate: '/usr/sbin/visudo -cf %s'
-      become: yes
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%sudo'
+    line: '%sudo  ALL=(ALL:ALL) NOPASSWD: ALL'
+    validate: '/usr/sbin/visudo -cf %s'
+  become: yes
 
 - name: add user to wheel group
-    user:
-      name: ssh_username
-      groups: sudo
-      append: yes
-      state: present
-    become: yes
+  user:
+  name: {{ ssh_username }}
+    groups: sudo
+    append: yes
+    state: present
+  become: yes
