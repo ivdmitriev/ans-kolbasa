@@ -1,0 +1,16 @@
+- name: Show /etc/hostname file in logasth hosts
+  hosts: logstash
+
+  tasks:
+    - name: cat /etc/hostname
+      raw: cat /etc/hostname
+
+    - name: cat /etc/hosts
+      raw: cat /etc/hosts
+
+- name: Show /etc/passwd on haproxy
+  hosts: haproxy
+
+  tasks:
+    - name: cat /etc/passwd
+      raw: cat /etc/passwd
