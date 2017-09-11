@@ -2,3 +2,19 @@ ansible_remote_user: admsec
 
 ssh_username: admsec
 ssh_pubkey_path: ~/.ssh/id_rsa.pub
+
+logsources:
+  - titan_eventlog:
+    type: beats
+    name: titan_eventlog
+    port: 4001
+
+logstash_listeners_hash:
+  - lsl1:
+    ip: 10.0.4.214
+    hname: siem-lsl1
+    fqdn: siem-lsl1.work.local
+  - lsl2:
+    ip: 10.0.4.215
+    hname: siem-lsl2
+    fqdn: siem-lsl2.work.local

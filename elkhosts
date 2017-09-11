@@ -1,11 +1,11 @@
 [haproxy]
 siem-haproxy.work.local
 
-[logstash-listeners]
+[logstash_listeners]
 siem-lsl1.work.local
 siem-lsl2.work.local
 
-[logstash-filters]
+[logstash_filters]
 siem-lsf1.work.local
 siem-lsf2.work.local
 siem-lsf3.work.local
@@ -22,14 +22,14 @@ siem-rabbitmq.work.local
 10.0.4.233
 
 
-[elastiksearch-balancer]
+[elastiksearch_balancer]
 siem-es-balancer.work.local
 
-[elastiksearch-master]
+[elastiksearch_master]
 siem-esm1.work.local
 siem-esm2.work.local
 
-[elastiksearch-data]
+[elastiksearch_data]
 siem-esd1.work.local
 siem-esd2.work.local
 

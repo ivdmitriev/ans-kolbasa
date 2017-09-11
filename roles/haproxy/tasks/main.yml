@@ -9,3 +9,19 @@
     name: haproxy
     state: present
   become: yes
+
+- name: configure haproxy
+  template:
+    src: "haproxy.cfg.ji2"
+    dst: "/etc/haproxy/haproxy.cfg"
+    owner: root
+    group: root
+    mode: 0644
+  become: yes
+
+- name: restarting and enabling autorun
+  systemd:
+    name: haproxy
+    enabled: yes
+    state: restarted
+  become: yes
