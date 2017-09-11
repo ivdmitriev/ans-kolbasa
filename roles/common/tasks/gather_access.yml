@@ -2,7 +2,7 @@
 
 - name: Copying ssh public key
   authorized_key:
-    user: {{ ssh_username }}
+    user: "{{ ssh_username }}"
     state: present
     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
   become: no
