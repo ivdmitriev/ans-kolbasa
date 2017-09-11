@@ -1,0 +1,11 @@
+- name: upgrade
+  apt:
+    upgrade: dist
+    state: present
+  become: yes
+
+- name: haproxy is installed
+  apt:
+    name: haproxy
+    state: present
+  become: yes
