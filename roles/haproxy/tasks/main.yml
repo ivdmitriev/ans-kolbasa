@@ -13,7 +13,7 @@
 - name: configure haproxy
   template:
     src: "haproxy.cfg.ji2"
-    dst: "/etc/haproxy/haproxy.cfg"
+    dest: "/etc/haproxy/haproxy.cfg"
     owner: root
     group: root
     mode: 0644
