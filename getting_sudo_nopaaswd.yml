@@ -1,28 +1,9 @@
-- name: setup python
+- name: Doing prerequesties for playing
+  vars_prompt:
+    - name: ansible_become_pass
+      private: yes
+      promt: "Enter sudo pass: "
   hosts: all
   become: yes
-
-
-  tasks:
-    - name: install python
-      raw: apt install python-apt -y
-
-    - name: make sure, that group wheel is present
-      group:
-        name: sudo
-        state: present
-
-    - name: allow passwordless sudo to wheel group
-      lineinfile:
-          dest: /etc/sudoers
-          state: present
-          regexp: '^%sudo'
-          line: '%sudo  ALL=(ALL:ALL) NOPASSWD: ALL'
-          validate: '/usr/sbin/visudo -cf %s'
-
-    - name: add admsec to wheel group
-      user:
-        name: admsec
-        groups: sudo
-        append: yes
-        state: present
+  roles:
+    - common

@@ -1,0 +1,2 @@
+ansible_remote_user: admsec
+ssh_pubkey_path: ~/.ssh/id_rsa.pub
