@@ -1,0 +1,7 @@
+- name: apt update upgrade
+  shell: apt-get update && apt-get upgrade
+  become: yes
+
+- name: installing python-apt
+  shell: apt-get install python python3 python-apt python3-apt -y
+  become: yes
