@@ -21,7 +21,7 @@ logstash_listeners_hash:
 
 rabbitmq_srv:
   - rabbitmq:
-    ip: "10.0.4.211"
+    host: "10.0.4.211"
     durable: "true"
     exchange: "logstash-exchange"
     key: "logstash-routing-key"
