@@ -1,13 +1,13 @@
 output {
     rabbitmq {
-       durable => {{ rabbitmq_srv.durable }}
-       exchange => "{{rabbitmq_srv.exchange}}"
-       key => "{{rabbitmq_srv.key}}"
-       exchange_type => "{{rabbitmq_srv.exchange_type}}"
-       host => '{{rabbitmq_srv.host}}'
-       password => "{{rabbitmq_srv.password}}"
-       persistent => {{rabbitmq_srv.persistent}}
-       user => "{{rabbitmq_srv.user}}"
+       durable => {{ rabbitmq_srv[0].durable }}
+       exchange => "{{rabbitmq_srv[0].exchange}}"
+       key => "{{rabbitmq_srv[0].key}}"
+       exchange_type => "{{rabbitmq_srv[0].exchange_type}}"
+       host => '{{rabbitmq_srv[0].host}}'
+       password => "{{rabbitmq_srv[0].password}}"
+       persistent => {{rabbitmq_srv[0].persistent}}
+       user => "{{rabbitmq_srv[0].user}}"
   }
   #file { path => "/var/log/raw/%{host}/%{+YYYY-MM-dd}.log"  }
 }
