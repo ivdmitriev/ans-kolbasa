@@ -1,0 +1,39 @@
+- name: remofing config files for logstash
+  file:
+    path: "/etc/logstash/conf.d/"
+    state: absent
+  become: yes
+
+- name: creating conf directory for logstash
+  file:
+    path: "/etc/logstash/conf.d/"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+
+- name: adding input conbfigs
+  template:
+    src: "input.ji2"
+    dest: "/etc/logstash/conf.d/01-input.conf"
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+
+- name: adding output conbfigs
+  template:
+    src: "output.ji2"
+    dest: "/etc/logstash/conf.d/02-output.conf"
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+
+- name: enabling and restart logstash
+  service:
+    name: logstash.service
+    enabled: yes
+    state: restarted
+  become: yes
