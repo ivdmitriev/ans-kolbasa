@@ -29,3 +29,6 @@ rabbitmq_srv:
     persistent: "true"
     user: "logstash"
     password: "password"
+
+es_balanser:
+  ip: "10.0.4.212"

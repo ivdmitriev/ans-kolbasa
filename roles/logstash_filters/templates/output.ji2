@@ -1,13 +1,6 @@
 output {
-    rabbitmq {
-       durable => {{ rabbitmq_srv[0].durable }}
-       exchange => "{{rabbitmq_srv[0].exchange}}"
-       key => "{{rabbitmq_srv[0].key}}"
-       exchange_type => "{{rabbitmq_srv[0].exchange_type}}"
-       host => '{{rabbitmq_srv[0].host}}'
-       password => "{{rabbitmq_srv[0].password}}"
-       persistent => {{rabbitmq_srv[0].persistent}}
-       user => "{{rabbitmq_srv[0].user}}"
-  }
-  #file { path => "/var/log/raw/%{host}/%{+YYYY-MM-dd}.log"  }
+    elasticsearch {
+          hosts => ['{{es_balanser.ip}}']
+          index => "logstash-%{+YYYY.MM.dd}"
+    }
 }

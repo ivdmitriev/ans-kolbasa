@@ -1,9 +1,17 @@
 input {
-  {% for logsource in logsources %}
-  # {{ logsource.name }}
-  {{ logsource.type }} {
-    port => {{ logsource.port }}
-    type => {{ logsource.name }}
-  }
-  {% endfor %}
+ rabbitmq {
+  auto_delete => false
+  durable => {{rabbitmq_srv[0].durable}}
+  exchange => "{{rabbitmq_srv[0].exchange}}"
+  exclusive => false
+  host => '{{rabbitmq_srv[0].host}}'
+  key => "{{rabbitmq_srv[0].key}}"
+  password => "{{rabbitmq_srv[0].password}}"
+  prefetch_count => 4
+  queue => "logstash-filter"
+  type => "logstash-filter-input"
+  user => "{{rabbitmq_srv[0].user}}"
+  threads => 3
+  arguments => {"x-ha-policy" => "all"}
+ }
 }

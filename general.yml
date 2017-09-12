@@ -13,3 +13,8 @@
   hosts: logstash_listeners
   roles:
     - logstash_listeners
+
+- name: Configuring logstash filters
+  hosts: logstash_filters
+  roles:
+    - logstash_filters

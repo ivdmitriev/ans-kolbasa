@@ -16,7 +16,7 @@
 - name: adding input conbfigs
   template:
     src: "input.ji2"
-    dest: "/etc/logstash/conf.d/01-input.conf"
+    dest: "/etc/logstash/conf.d/00-input.conf"
     owner: root
     group: root
     mode: 0755
@@ -25,7 +25,16 @@
 - name: adding output conbfigs
   template:
     src: "output.ji2"
-    dest: "/etc/logstash/conf.d/02-output.conf"
+    dest: "/etc/logstash/conf.d/99-output.conf"
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+
+- name: adding filter config
+  copy:
+    src: "conf.d/"
+    dest: "/etc/logstash/conf.d/"
     owner: root
     group: root
     mode: 0755
