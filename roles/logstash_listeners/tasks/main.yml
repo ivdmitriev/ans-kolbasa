@@ -36,3 +36,4 @@
     name: logstash.service
     enabled: yes
     state: restarted
+  become: yes
