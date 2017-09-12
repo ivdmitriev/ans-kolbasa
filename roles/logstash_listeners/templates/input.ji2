@@ -1,0 +1,9 @@
+input {
+  {% for logsource in logsources %}
+  # {{ logsource.name }}
+  {{ logsource.type }} {
+    port => {{ logsource.port }}
+    type => {{ logsource.name }}
+  }
+  {% endfor %}
+}

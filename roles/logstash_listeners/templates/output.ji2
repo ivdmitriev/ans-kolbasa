@@ -1,0 +1,13 @@
+output {
+    rabbitmq {
+       durable => {{ rabbitmq_srv.durable }}
+       exchange => "{{rabbitmq_srv.exchange}}"
+       key => "{{rabbitmq_srv.key}}"
+       exchange_type => "{{rabbitmq_srv.exchange_type}}"
+       host => '{{rabbitmq_srv.host}}'
+       password => "{{rabbitmq_srv.password}}"
+       persistent => {{rabbitmq_srv.persistent}}
+       user => "{{rabbitmq_srv.user}}"
+  }
+  #file { path => "/var/log/raw/%{host}/%{+YYYY-MM-dd}.log"  }
+}

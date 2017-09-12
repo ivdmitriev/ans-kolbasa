@@ -3,3 +3,13 @@
   become: yes
   roles:
     - haproxy
+
+- name: Configuring logstash all
+  hosts: logstash
+  roles:
+    - logstash
+
+- name: Configuring logstash listeners
+  hosts: logstash_listeners
+  roles:
+    - logstash_listeners
