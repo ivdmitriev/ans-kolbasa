@@ -10,7 +10,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0644
+    mode: 0755
   become: yes
 
 - name: adding input conbfigs
@@ -19,7 +19,7 @@
     dest: "/etc/logstash/conf.d/01-input.conf"
     owner: root
     group: root
-    mode: 0644
+    mode: 0755
   become: yes
 
 - name: adding output conbfigs
@@ -28,7 +28,7 @@
     dest: "/etc/logstash/conf.d/02-output.conf"
     owner: root
     group: root
-    mode: 0644
+    mode: 0755
   become: yes
 
 - name: enabling and restart logstash
