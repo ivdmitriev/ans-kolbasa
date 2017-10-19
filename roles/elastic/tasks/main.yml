@@ -31,7 +31,7 @@
 
 - name: update and install logstash
   apt:
-    name: "elastiksearch"
+    name: "elasticsearch"
     update_cache: yes
     state: present
   become: yes
