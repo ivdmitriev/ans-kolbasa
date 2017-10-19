@@ -18,3 +18,24 @@
   hosts: logstash_filters
   roles:
     - logstash_filters
+
+- name: Configuring elasticsearch all
+  hosts: elastiksearch
+  roles:
+    - elastic
+
+- name: Configuring elasticsearch BALANCER
+  hosts: elastiksearch_balancer
+    roles:
+      - elastic-balancer
+
+
+- name: Configuring elasticsearch MASTER
+  hosts: elastiksearch_master
+    roles: 
+      - elastic-master
+
+- name: Configuring elasticsearch DATA
+    hosts: elastiksearch_data
+      roles:
+        - elastic-data

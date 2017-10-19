@@ -1,0 +1,15 @@
+- name: adding input conbfigs
+  template:
+    src: "elasticsearch.yml.ji2"
+    dest: "/etc/elasticsearch/elasticsearch.yml"
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+
+- name: enabling and restart elasticsearch
+  service:
+    name: elasticsearch.service
+    enabled: yes
+    state: restarted
+  become: yes

@@ -23,15 +23,15 @@ siem-rabbitmq.work.local
 
 
 [elastiksearch_balancer]
-siem-es-balancer.work.local
+siem-es-balancer.work.local ip=10.0.4.212 hostname=siem-es-balancer
 
 [elastiksearch_master]
-siem-esm1.work.local
-siem-esm2.work.local
+siem-esm1.work.local ip=10.0.4.218  hostname=siem-esm1
+siem-esm2.work.local ip=10.0.4.220  hostname=siem-esm2
 
 [elastiksearch_data]
-siem-esd1.work.local
-siem-esd2.work.local
+siem-esd1.work.local ip=10.0.4.219  hostname=siem-esd1
+siem-esd2.work.local ip=10.0.4.220  hostname=siem-esd2
 
 [elastiksearch:children]
 elastiksearch_master

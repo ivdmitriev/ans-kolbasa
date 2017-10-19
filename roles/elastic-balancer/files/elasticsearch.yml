@@ -1,0 +1,8 @@
+network.host: 10.0.4.212
+discovery.zen.ping.unicast.hosts: ["10.0.4.212", "10.0.4.218", "10.0.4.219", "10.0.4.220", "10.0.4.221"]
+discovery.zen.minimum_master_nodes: 1
+cluster.name: KOLBASA
+node.name: Balancer Node SIEM_ESB
+node.master: false
+node.data: false
+http.port: 9200

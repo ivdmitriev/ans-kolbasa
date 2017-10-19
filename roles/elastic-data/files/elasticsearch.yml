@@ -1,0 +1,8 @@
+network.host: 10.0.4.219
+discovery.zen.ping.unicast.hosts: ["10.0.4.212", "10.0.4.218", "10.0.4.219", "10.0.4.220", "10.0.4.221"]
+discovery.zen.minimum_master_nodes: 1
+cluster.name: KOLBASA
+node.name: Data Node SIEM-ESD1
+node.data: true
+node.master: false
+http.enabled: false

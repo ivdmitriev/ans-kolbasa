@@ -32,3 +32,34 @@ rabbitmq_srv:
 
 es_balanser:
   ip: "10.0.4.212"
+
+es_cluster_settings:
+  minimum_master_nodes: 1
+  cluster_name: "KOLBASA"
+
+es_cluster_hosts:
+  - es_balancer:
+    ip: "10.0.4.212"
+    hostname: "siem-esb.work.local"
+    master: false
+    data: false
+    http_enabled: true
+    http_port: 9200
+  - es_data1:
+    ip: "10.0.4.219"
+    hostname: "siem-esd1.work.local"
+    master: false
+    data: true
+    http_enabled: false
+  - es_data2:
+    ip: "10.0.4.221"
+    hostname: "siem-esd2.work.local"
+    master: false
+    data: true
+    http_enabled: false
+  - es_master1:
+    ip: "10.0.4.218"
+    hostame: "siem-esm1.work.local"
+  - es_master2:
+    ip: "10.0.4.220"
+    hostname: "siem-esm2.work.local"

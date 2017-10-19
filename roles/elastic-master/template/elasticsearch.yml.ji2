@@ -1,0 +1,12 @@
+network.host: {{ ip }}
+{% set host_list = [] %}
+ {% for  node in es_cluster_hosts %}
+    {% set host_list.append(node.ip) %}
+ {% endfor %}
+discovery.zen.ping.unicast.hosts: ["{{ host_list | join('\", \"') }}"]
+discovery.zen.minimum_master_nodes: {{ es_cluster_settings.minimum_master_nodes }}
+cluster.name: {{ es_cluster_settings.cluster_name }}
+node.name: Balancer Node {{ hostname }}
+node.data: false
+node.master: true
+http.enabled: false
