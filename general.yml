@@ -36,6 +36,6 @@
     - elastic-master
 
 - name: Configuring elasticsearch DATA
-    hosts: elastiksearch_data
-    roles:
-      - elastic-data
+  hosts: elastiksearch_data
+  roles:
+    - elastic-data
