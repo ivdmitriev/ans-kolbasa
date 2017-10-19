@@ -34,5 +34,5 @@
   apt:
     name: "logstash"
     update_cache: yes
-    state: present
+    state: latest
   become: yes
