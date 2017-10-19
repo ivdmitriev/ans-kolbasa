@@ -33,4 +33,5 @@
   apt:
     name: "elastiksearch"
     update_cache: yes
-    state: present    become: yes
+    state: present
+  become: yes
